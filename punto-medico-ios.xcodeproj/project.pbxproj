@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7422D60F23CBFD820079ABDC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D60E23CBFD820079ABDC /* Reachability.swift */; };
+		7422D61123CBFDEA0079ABDC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61023CBFDEA0079ABDC /* UserProfileController.swift */; };
+		7422D61323CC9FE00079ABDC /* CatalogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61223CC9FE00079ABDC /* CatalogController.swift */; };
+		7422D61623CCA9FF0079ABDC /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61523CCA9FF0079ABDC /* CatalogCell.swift */; };
+		7422D61823CCAC000079ABDC /* MySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61723CCAC000079ABDC /* MySection.swift */; };
+		7422D61B23CCAC880079ABDC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61A23CCAC880079ABDC /* Models.swift */; };
+		7422D61E23CCD5200079ABDC /* CatalogHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D61C23CCD5200079ABDC /* CatalogHeaderCell.swift */; };
+		7422D61F23CCD5200079ABDC /* CatalogHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7422D61D23CCD5200079ABDC /* CatalogHeaderCell.xib */; };
+		7422D62223CCDA230079ABDC /* CatalogFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422D62023CCDA230079ABDC /* CatalogFooterCell.swift */; };
+		7422D62323CCDA230079ABDC /* CatalogFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7422D62123CCDA230079ABDC /* CatalogFooterCell.xib */; };
+		744E5B0D23CCE64E00FC1853 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B0C23CCE64E00FC1853 /* LoginController.swift */; };
+		744E5B0F23CD08E900FC1853 /* ContactUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B0E23CD08E900FC1853 /* ContactUsController.swift */; };
+		744E5B1123CD17E700FC1853 /* ItemDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B1023CD17E700FC1853 /* ItemDetailController.swift */; };
+		744E5B1323CD248600FC1853 /* ItemImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B1223CD248600FC1853 /* ItemImagesCell.swift */; };
+		74BAB8EE23CBD20500DD1597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB8ED23CBD20500DD1597 /* AppDelegate.swift */; };
+		74BAB8F023CBD20500DD1597 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB8EF23CBD20500DD1597 /* FirstViewController.swift */; };
+		74BAB8F223CBD20500DD1597 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB8F123CBD20500DD1597 /* SecondViewController.swift */; };
+		74BAB8F523CBD20500DD1597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB8F323CBD20500DD1597 /* Main.storyboard */; };
+		74BAB8F723CBD20800DD1597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB8F623CBD20800DD1597 /* Assets.xcassets */; };
+		74BAB8FA23CBD20800DD1597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BAB8F823CBD20800DD1597 /* LaunchScreen.storyboard */; };
+		74BAB90523CBD20800DD1597 /* punto_medico_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB90423CBD20800DD1597 /* punto_medico_iosTests.swift */; };
+		74BAB91023CBD20800DD1597 /* punto_medico_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB90F23CBD20800DD1597 /* punto_medico_iosUITests.swift */; };
+		74BAB92023CBD34700DD1597 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB91F23CBD34700DD1597 /* RegisterController.swift */; };
+		74BAB92223CBD48800DD1597 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92123CBD48800DD1597 /* RoundButton.swift */; };
+		74BAB92423CBD4AC00DD1597 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92323CBD4AC00DD1597 /* UIColor.swift */; };
+		74BAB92623CBE3B600DD1597 /* PasswordForgottenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92523CBE3B600DD1597 /* PasswordForgottenController.swift */; };
+		74BAB92823CBE50C00DD1597 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92723CBE50C00DD1597 /* CardView.swift */; };
+		74BAB92B23CBEB8100DD1597 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92A23CBEB8100DD1597 /* Util.swift */; };
+		74BAB92D23CBF27700DD1597 /* NoInternetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92C23CBF27700DD1597 /* NoInternetController.swift */; };
+		DAD7D757F1AA0C29DFD24718 /* Pods_punto_medico_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3F6EBDE87A64598E4C90 /* Pods_punto_medico_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74BAB90123CBD20800DD1597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74BAB8E223CBD20500DD1597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74BAB8E923CBD20500DD1597;
+			remoteInfo = "punto-medico-ios";
+		};
+		74BAB90C23CBD20800DD1597 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74BAB8E223CBD20500DD1597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74BAB8E923CBD20500DD1597;
+			remoteInfo = "punto-medico-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F353C7DB820BCE69018D7BC /* Pods-punto-medico-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-punto-medico-ios.release.xcconfig"; path = "Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios.release.xcconfig"; sourceTree = "<group>"; };
+		7422D60E23CBFD820079ABDC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		7422D61023CBFDEA0079ABDC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		7422D61223CC9FE00079ABDC /* CatalogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogController.swift; sourceTree = "<group>"; };
+		7422D61523CCA9FF0079ABDC /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
+		7422D61723CCAC000079ABDC /* MySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySection.swift; sourceTree = "<group>"; };
+		7422D61A23CCAC880079ABDC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		7422D61C23CCD5200079ABDC /* CatalogHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatalogHeaderCell.swift; path = "punto-medico-ios/controllers/CatalogHeaderCell.swift"; sourceTree = SOURCE_ROOT; };
+		7422D61D23CCD5200079ABDC /* CatalogHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CatalogHeaderCell.xib; path = "punto-medico-ios/CatalogHeaderCell.xib"; sourceTree = SOURCE_ROOT; };
+		7422D62023CCDA230079ABDC /* CatalogFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFooterCell.swift; sourceTree = "<group>"; };
+		7422D62123CCDA230079ABDC /* CatalogFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogFooterCell.xib; sourceTree = "<group>"; };
+		744E5B0C23CCE64E00FC1853 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		744E5B0E23CD08E900FC1853 /* ContactUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsController.swift; sourceTree = "<group>"; };
+		744E5B1023CD17E700FC1853 /* ItemDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailController.swift; sourceTree = "<group>"; };
+		744E5B1223CD248600FC1853 /* ItemImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImagesCell.swift; sourceTree = "<group>"; };
+		74BAB8EA23CBD20500DD1597 /* punto-medico-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "punto-medico-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BAB8ED23CBD20500DD1597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74BAB8EF23CBD20500DD1597 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		74BAB8F123CBD20500DD1597 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		74BAB8F423CBD20500DD1597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74BAB8F623CBD20800DD1597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74BAB8F923CBD20800DD1597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74BAB8FB23CBD20800DD1597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BAB90023CBD20800DD1597 /* punto-medico-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "punto-medico-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BAB90423CBD20800DD1597 /* punto_medico_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = punto_medico_iosTests.swift; sourceTree = "<group>"; };
+		74BAB90623CBD20800DD1597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BAB90B23CBD20800DD1597 /* punto-medico-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "punto-medico-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BAB90F23CBD20800DD1597 /* punto_medico_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = punto_medico_iosUITests.swift; sourceTree = "<group>"; };
+		74BAB91123CBD20800DD1597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BAB91F23CBD34700DD1597 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		74BAB92123CBD48800DD1597 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		74BAB92323CBD4AC00DD1597 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		74BAB92523CBE3B600DD1597 /* PasswordForgottenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordForgottenController.swift; sourceTree = "<group>"; };
+		74BAB92723CBE50C00DD1597 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		74BAB92A23CBEB8100DD1597 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		74BAB92C23CBF27700DD1597 /* NoInternetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetController.swift; sourceTree = "<group>"; };
+		841D3F6EBDE87A64598E4C90 /* Pods_punto_medico_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_punto_medico_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEF3F65BCA2F1B3D01E1DE9 /* Pods-punto-medico-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-punto-medico-ios.debug.xcconfig"; path = "Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74BAB8E723CBD20500DD1597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD7D757F1AA0C29DFD24718 /* Pods_punto_medico_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB8FD23CBD20800DD1597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB90823CBD20800DD1597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71B0628378C49AAF63E0700C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF3F65BCA2F1B3D01E1DE9 /* Pods-punto-medico-ios.debug.xcconfig */,
+				3F353C7DB820BCE69018D7BC /* Pods-punto-medico-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7422D61423CCA9DA0079ABDC /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				7422D61C23CCD5200079ABDC /* CatalogHeaderCell.swift */,
+				7422D61523CCA9FF0079ABDC /* CatalogCell.swift */,
+				7422D62023CCDA230079ABDC /* CatalogFooterCell.swift */,
+				744E5B1223CD248600FC1853 /* ItemImagesCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		7422D61923CCAC130079ABDC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				7422D61723CCAC000079ABDC /* MySection.swift */,
+				7422D61A23CCAC880079ABDC /* Models.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		74BAB8E123CBD20500DD1597 = {
+			isa = PBXGroup;
+			children = (
+				74BAB8EC23CBD20500DD1597 /* punto-medico-ios */,
+				74BAB90323CBD20800DD1597 /* punto-medico-iosTests */,
+				74BAB90E23CBD20800DD1597 /* punto-medico-iosUITests */,
+				74BAB8EB23CBD20500DD1597 /* Products */,
+				71B0628378C49AAF63E0700C /* Pods */,
+				CDB1C599AD624018C7A44351 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74BAB8EB23CBD20500DD1597 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB8EA23CBD20500DD1597 /* punto-medico-ios.app */,
+				74BAB90023CBD20800DD1597 /* punto-medico-iosTests.xctest */,
+				74BAB90B23CBD20800DD1597 /* punto-medico-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74BAB8EC23CBD20500DD1597 /* punto-medico-ios */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB8ED23CBD20500DD1597 /* AppDelegate.swift */,
+				74BAB8F623CBD20800DD1597 /* Assets.xcassets */,
+				7422D61423CCA9DA0079ABDC /* cells */,
+				74BAB91D23CBD2E500DD1597 /* controllers */,
+				74BAB91E23CBD2E900DD1597 /* design */,
+				74BAB8EF23CBD20500DD1597 /* FirstViewController.swift */,
+				74BAB8FB23CBD20800DD1597 /* Info.plist */,
+				7422D61D23CCD5200079ABDC /* CatalogHeaderCell.xib */,
+				7422D62123CCDA230079ABDC /* CatalogFooterCell.xib */,
+				74BAB8F823CBD20800DD1597 /* LaunchScreen.storyboard */,
+				74BAB8F323CBD20500DD1597 /* Main.storyboard */,
+				7422D61923CCAC130079ABDC /* models */,
+				74BAB8F123CBD20500DD1597 /* SecondViewController.swift */,
+				74BAB92923CBEB6E00DD1597 /* util */,
+			);
+			path = "punto-medico-ios";
+			sourceTree = "<group>";
+		};
+		74BAB90323CBD20800DD1597 /* punto-medico-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB90423CBD20800DD1597 /* punto_medico_iosTests.swift */,
+				74BAB90623CBD20800DD1597 /* Info.plist */,
+			);
+			path = "punto-medico-iosTests";
+			sourceTree = "<group>";
+		};
+		74BAB90E23CBD20800DD1597 /* punto-medico-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB90F23CBD20800DD1597 /* punto_medico_iosUITests.swift */,
+				74BAB91123CBD20800DD1597 /* Info.plist */,
+			);
+			path = "punto-medico-iosUITests";
+			sourceTree = "<group>";
+		};
+		74BAB91D23CBD2E500DD1597 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7422D61223CC9FE00079ABDC /* CatalogController.swift */,
+				744E5B0E23CD08E900FC1853 /* ContactUsController.swift */,
+				744E5B1023CD17E700FC1853 /* ItemDetailController.swift */,
+				744E5B0C23CCE64E00FC1853 /* LoginController.swift */,
+				74BAB92C23CBF27700DD1597 /* NoInternetController.swift */,
+				74BAB92523CBE3B600DD1597 /* PasswordForgottenController.swift */,
+				74BAB91F23CBD34700DD1597 /* RegisterController.swift */,
+				7422D61023CBFDEA0079ABDC /* UserProfileController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		74BAB91E23CBD2E900DD1597 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB92123CBD48800DD1597 /* RoundButton.swift */,
+				74BAB92323CBD4AC00DD1597 /* UIColor.swift */,
+				74BAB92723CBE50C00DD1597 /* CardView.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		74BAB92923CBEB6E00DD1597 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				74BAB92A23CBEB8100DD1597 /* Util.swift */,
+				7422D60E23CBFD820079ABDC /* Reachability.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		CDB1C599AD624018C7A44351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				841D3F6EBDE87A64598E4C90 /* Pods_punto_medico_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74BAB8E923CBD20500DD1597 /* punto-medico-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74BAB91423CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-ios" */;
+			buildPhases = (
+				2A6C61F8F9CF02BDD168B765 /* [CP] Check Pods Manifest.lock */,
+				74BAB8E623CBD20500DD1597 /* Sources */,
+				74BAB8E723CBD20500DD1597 /* Frameworks */,
+				74BAB8E823CBD20500DD1597 /* Resources */,
+				88593D9B30220CE0F0052C19 /* [CP] Embed Pods Frameworks */,
+				37C71ED5F4DC18392FA0AF5A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "punto-medico-ios";
+			productName = "punto-medico-ios";
+			productReference = 74BAB8EA23CBD20500DD1597 /* punto-medico-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74BAB8FF23CBD20800DD1597 /* punto-medico-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74BAB91723CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-iosTests" */;
+			buildPhases = (
+				74BAB8FC23CBD20800DD1597 /* Sources */,
+				74BAB8FD23CBD20800DD1597 /* Frameworks */,
+				74BAB8FE23CBD20800DD1597 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74BAB90223CBD20800DD1597 /* PBXTargetDependency */,
+			);
+			name = "punto-medico-iosTests";
+			productName = "punto-medico-iosTests";
+			productReference = 74BAB90023CBD20800DD1597 /* punto-medico-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		74BAB90A23CBD20800DD1597 /* punto-medico-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74BAB91A23CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-iosUITests" */;
+			buildPhases = (
+				74BAB90723CBD20800DD1597 /* Sources */,
+				74BAB90823CBD20800DD1597 /* Frameworks */,
+				74BAB90923CBD20800DD1597 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74BAB90D23CBD20800DD1597 /* PBXTargetDependency */,
+			);
+			name = "punto-medico-iosUITests";
+			productName = "punto-medico-iosUITests";
+			productReference = 74BAB90B23CBD20800DD1597 /* punto-medico-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74BAB8E223CBD20500DD1597 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Punto Medico";
+				TargetAttributes = {
+					74BAB8E923CBD20500DD1597 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					74BAB8FF23CBD20800DD1597 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 74BAB8E923CBD20500DD1597;
+					};
+					74BAB90A23CBD20800DD1597 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 74BAB8E923CBD20500DD1597;
+					};
+				};
+			};
+			buildConfigurationList = 74BAB8E523CBD20500DD1597 /* Build configuration list for PBXProject "punto-medico-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74BAB8E123CBD20500DD1597;
+			productRefGroup = 74BAB8EB23CBD20500DD1597 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74BAB8E923CBD20500DD1597 /* punto-medico-ios */,
+				74BAB8FF23CBD20800DD1597 /* punto-medico-iosTests */,
+				74BAB90A23CBD20800DD1597 /* punto-medico-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74BAB8E823CBD20500DD1597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BAB8FA23CBD20800DD1597 /* LaunchScreen.storyboard in Resources */,
+				74BAB8F723CBD20800DD1597 /* Assets.xcassets in Resources */,
+				7422D61F23CCD5200079ABDC /* CatalogHeaderCell.xib in Resources */,
+				7422D62323CCDA230079ABDC /* CatalogFooterCell.xib in Resources */,
+				74BAB8F523CBD20500DD1597 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB8FE23CBD20800DD1597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB90923CBD20800DD1597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A6C61F8F9CF02BDD168B765 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-punto-medico-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37C71ED5F4DC18392FA0AF5A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88593D9B30220CE0F0052C19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74BAB8E623CBD20500DD1597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BAB92623CBE3B600DD1597 /* PasswordForgottenController.swift in Sources */,
+				74BAB92B23CBEB8100DD1597 /* Util.swift in Sources */,
+				744E5B1323CD248600FC1853 /* ItemImagesCell.swift in Sources */,
+				74BAB92023CBD34700DD1597 /* RegisterController.swift in Sources */,
+				7422D61E23CCD5200079ABDC /* CatalogHeaderCell.swift in Sources */,
+				74BAB92423CBD4AC00DD1597 /* UIColor.swift in Sources */,
+				74BAB92223CBD48800DD1597 /* RoundButton.swift in Sources */,
+				744E5B0D23CCE64E00FC1853 /* LoginController.swift in Sources */,
+				7422D61323CC9FE00079ABDC /* CatalogController.swift in Sources */,
+				744E5B0F23CD08E900FC1853 /* ContactUsController.swift in Sources */,
+				74BAB8F223CBD20500DD1597 /* SecondViewController.swift in Sources */,
+				74BAB8EE23CBD20500DD1597 /* AppDelegate.swift in Sources */,
+				7422D60F23CBFD820079ABDC /* Reachability.swift in Sources */,
+				744E5B1123CD17E700FC1853 /* ItemDetailController.swift in Sources */,
+				7422D61623CCA9FF0079ABDC /* CatalogCell.swift in Sources */,
+				7422D61123CBFDEA0079ABDC /* UserProfileController.swift in Sources */,
+				7422D62223CCDA230079ABDC /* CatalogFooterCell.swift in Sources */,
+				7422D61B23CCAC880079ABDC /* Models.swift in Sources */,
+				74BAB92D23CBF27700DD1597 /* NoInternetController.swift in Sources */,
+				74BAB92823CBE50C00DD1597 /* CardView.swift in Sources */,
+				74BAB8F023CBD20500DD1597 /* FirstViewController.swift in Sources */,
+				7422D61823CCAC000079ABDC /* MySection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB8FC23CBD20800DD1597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BAB90523CBD20800DD1597 /* punto_medico_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BAB90723CBD20800DD1597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BAB91023CBD20800DD1597 /* punto_medico_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74BAB90223CBD20800DD1597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74BAB8E923CBD20500DD1597 /* punto-medico-ios */;
+			targetProxy = 74BAB90123CBD20800DD1597 /* PBXContainerItemProxy */;
+		};
+		74BAB90D23CBD20800DD1597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74BAB8E923CBD20500DD1597 /* punto-medico-ios */;
+			targetProxy = 74BAB90C23CBD20800DD1597 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74BAB8F323CBD20500DD1597 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74BAB8F423CBD20500DD1597 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74BAB8F823CBD20800DD1597 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74BAB8F923CBD20800DD1597 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74BAB91223CBD20800DD1597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74BAB91323CBD20800DD1597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74BAB91523CBD20800DD1597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCEF3F65BCA2F1B3D01E1DE9 /* Pods-punto-medico-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74BAB91623CBD20800DD1597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F353C7DB820BCE69018D7BC /* Pods-punto-medico-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		74BAB91823CBD20800DD1597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/punto-medico-ios.app/punto-medico-ios";
+			};
+			name = Debug;
+		};
+		74BAB91923CBD20800DD1597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/punto-medico-ios.app/punto-medico-ios";
+			};
+			name = Release;
+		};
+		74BAB91B23CBD20800DD1597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "punto-medico-ios";
+			};
+			name = Debug;
+		};
+		74BAB91C23CBD20800DD1597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "punto-medico-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "puntomedico.com.bo.punto-medico-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "punto-medico-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74BAB8E523CBD20500DD1597 /* Build configuration list for PBXProject "punto-medico-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BAB91223CBD20800DD1597 /* Debug */,
+				74BAB91323CBD20800DD1597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74BAB91423CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BAB91523CBD20800DD1597 /* Debug */,
+				74BAB91623CBD20800DD1597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74BAB91723CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BAB91823CBD20800DD1597 /* Debug */,
+				74BAB91923CBD20800DD1597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74BAB91A23CBD20800DD1597 /* Build configuration list for PBXNativeTarget "punto-medico-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BAB91B23CBD20800DD1597 /* Debug */,
+				74BAB91C23CBD20800DD1597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74BAB8E223CBD20500DD1597 /* Project object */;
+}
