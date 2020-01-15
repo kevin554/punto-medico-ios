@@ -79,6 +79,10 @@ class RegisterController: UIViewController {
     
     func register(username:String, email:String, password:String, passwordConfirmed:String) {
         
+        if let tabBarController = self.tabBarController {
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+            tabBarController.viewControllers![0] = first
+        }
     }
     
     /* hide the keyboard, if the user touches anything but a textfield */

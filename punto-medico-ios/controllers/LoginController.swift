@@ -64,6 +64,14 @@ class LoginController: UIViewController {
         
     func login(username:String, password:String) {
         
+        if let tabBarController = self.tabBarController {
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+            
+            let navigationController = UINavigationController(rootViewController: first)
+            
+            tabBarController.viewControllers![0] = navigationController
+            tabBarController.viewControllers![0].title = "Mi perfil"
+        }
     }
     
     /* hide the keyboard, if the user touches anything but a textfield */

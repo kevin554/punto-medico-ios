@@ -14,6 +14,10 @@ class CategoriesController: UIViewController {
 //        navigationController?.navigationBar.tintColor = .white
         categoriesTableView.tableFooterView = UIView(frame: CGRect.zero)
         
+//        if let tabBarController = self.tabBarController {
+//            let first = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+//            tabBarController.viewControllers![0] = first
+//        }
 //        fetchCategories()
     }
     

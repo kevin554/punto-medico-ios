@@ -36,7 +36,7 @@ extension PricesController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "priceFeaturesCell", for: indexPath) as! PriceFeaturesCell
         
-        let aSection = pricesArray[indexPath.section]
+//        let aSection = pricesArray[indexPath.section]
         
 //        let description = aSection.features["subcategories"].arrayValue[indexPath.row]
         return cell

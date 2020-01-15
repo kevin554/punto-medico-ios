@@ -7,6 +7,13 @@ class CatalogController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbar.backgroundImage = UIImage()
+        
+        // TODO: if the user is logged
+//        if let tabBarController = self.tabBarController {
+//            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+//            tabBarController.viewControllers![0] = first
+//            tabBarController.viewControllers![0].title = "Mi perfil"
+//        }
     }
 
 }
@@ -22,6 +29,11 @@ extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegat
         
 //        cell.image.image = imageArray[indexPath.row]
         
+        /* MyTapOnSubjectGesture */
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(recognizer:)))
+        cell.contentView.addGestureRecognizer(tapGestureRecognizer)
+//        tapGestureRecognizer.obj = aSection.subjects[indexPath.row]
+        
         return cell
     }
     
@@ -32,4 +44,23 @@ extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegat
         return CGSize(width: collectionViewSize / 2, height: 220)
     }
     
+    @objc
+    func handleCardTap(recognizer: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "ItemDetail", sender: nil)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        segue.destination.transitioningDelegate = self
+//        segue.destination.modalPresentationStyle = .custom
+//
+//        let vc = segue.destination as! SubjectAcademicRecordController
+//        vc.subject = sender as! Subject
+//    }
+    
 }
+
+//class MyTapOnSubjectGesture: UITapGestureRecognizer {
+//
+//    var obj = Subject()
+//
+//}
