@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6LK-em-rFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B9B-Bc-qqS">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -643,7 +643,7 @@
         <!--Catalogo-->
         <scene sceneID="ThC-7Q-khJ">
             <objects>
-                <viewController id="9ff-2o-dh8" customClass="CatalogController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9ff-2o-dh8" customClass="CategoriesController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TjP-Hc-8wb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -652,7 +652,7 @@
                                 <rect key="frame" x="10" y="59" width="394" height="739"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="catalogCell" id="BQJ-yV-0eh" customClass="CatalogCell" customModule="punto_medico_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="BQJ-yV-0eh" customClass="CategoriesCell" customModule="punto_medico_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BQJ-yV-0eh" id="e5q-qA-BbR">
@@ -708,12 +708,469 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Catalogo" id="2hw-KD-eSx"/>
                     <connections>
-                        <outlet property="catalogTableView" destination="cDt-ui-acO" id="JqJ-JE-Awy"/>
+                        <outlet property="categoriesTableView" destination="cDt-ui-acO" id="JqJ-JE-Awy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap2-CQ-re1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="678"/>
+        </scene>
+        <!--About Us Controller-->
+        <scene sceneID="6jw-h5-p9y">
+            <objects>
+                <viewController id="Wd3-yV-sfa" customClass="AboutUsController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCy-Q9-We8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c96-lM-vox" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                <rect key="frame" x="15" y="64" width="384" height="332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punto Medico es la plataforma líder en Bolivia de clasificados online para mercados 100% en el área médica." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6N-9Q-yTZ">
+                                        <rect key="frame" x="16" y="16" width="352" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-cp-ZIQ">
+                                        <rect key="frame" x="16" y="89.5" width="352" height="95.5"/>
+                                        <string key="text">Punto Medico conecta la comunidad local para vender, comprar e intercambiar sus bienes usados y servicios de una manera rápido y fácil para que cualquier persona pueda publicar un anuncio desde su celular o en el sitio web.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l77-Qr-PEk">
+                                        <rect key="frame" x="16" y="201" width="352" height="115"/>
+                                        <string key="text">Cada mes, miles de personas alrededor de Bolivia visitan Punto Medico para encontrar y vender una amplia gama de productos, desde equipos médicos, de laboratorio, odontología, muebles y bienes, servicios locales, insumos y muchos productos más.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="l77-Qr-PEk" secondAttribute="trailing" constant="16" id="1On-2F-KHS"/>
+                                    <constraint firstItem="l77-Qr-PEk" firstAttribute="leading" secondItem="c96-lM-vox" secondAttribute="leading" constant="16" id="3q4-1V-kzZ"/>
+                                    <constraint firstItem="J6N-9Q-yTZ" firstAttribute="top" secondItem="c96-lM-vox" secondAttribute="top" constant="16" id="6D9-GP-vVS"/>
+                                    <constraint firstItem="J6N-9Q-yTZ" firstAttribute="leading" secondItem="c96-lM-vox" secondAttribute="leading" constant="16" id="CFl-Ya-LPf"/>
+                                    <constraint firstAttribute="bottom" secondItem="l77-Qr-PEk" secondAttribute="bottom" constant="16" id="DmL-Gi-UIh"/>
+                                    <constraint firstAttribute="trailing" secondItem="WX9-cp-ZIQ" secondAttribute="trailing" constant="16" id="Gun-uY-xNd"/>
+                                    <constraint firstAttribute="trailing" secondItem="J6N-9Q-yTZ" secondAttribute="trailing" constant="16" id="J9F-2t-YMB"/>
+                                    <constraint firstItem="l77-Qr-PEk" firstAttribute="top" secondItem="WX9-cp-ZIQ" secondAttribute="bottom" constant="16" id="PnH-DT-OWL"/>
+                                    <constraint firstItem="WX9-cp-ZIQ" firstAttribute="top" secondItem="J6N-9Q-yTZ" secondAttribute="bottom" constant="16" id="VNm-aM-q6P"/>
+                                    <constraint firstItem="WX9-cp-ZIQ" firstAttribute="leading" secondItem="c96-lM-vox" secondAttribute="leading" constant="16" id="mRf-Mj-UM7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njq-gL-AcI" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                <rect key="frame" x="15" y="406" width="384" height="369"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objetivos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ks-Sv-Rkb">
+                                        <rect key="frame" x="16" y="16" width="352" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kak-3v-MD5" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="41" width="24" height="4"/>
+                                        <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="cYC-sN-tRf"/>
+                                            <constraint firstAttribute="height" constant="4" id="hed-9O-Mg9"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Got-sG-s11">
+                                        <rect key="frame" x="16" y="53" width="352" height="76.5"/>
+                                        <string key="text">En Punto Medico creemos en hacer del mundo un lugar mejor: Punto Medico mejora la vida de la gente reuniéndola para intercambios con beneficios mutuos.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-JJ-O4C">
+                                        <rect key="frame" x="16" y="145.5" width="352" height="115"/>
+                                        <string key="text">Los vendedores pueden ganar fácilmente algo de dinero extra simplemente por publicar productos que ya no usan – por lo tanto, facilitarles a los compradores la oportunidad de encontrar artículos de gran valor a precios razonables.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAd-LV-rx5">
+                                        <rect key="frame" x="16" y="276.5" width="352" height="76.5"/>
+                                        <string key="text">Punto Medico te ofrece la plataforma mas segura de pagos a travez de Payme, considerada la forma mas segura de pagos en internet.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CAd-LV-rx5" secondAttribute="bottom" constant="16" id="2Me-M9-fqF"/>
+                                    <constraint firstItem="CAd-LV-rx5" firstAttribute="top" secondItem="6cR-JJ-O4C" secondAttribute="bottom" constant="16" id="4ZV-N1-g3m"/>
+                                    <constraint firstItem="6cR-JJ-O4C" firstAttribute="leading" secondItem="njq-gL-AcI" secondAttribute="leading" constant="16" id="5JI-LU-0Qi"/>
+                                    <constraint firstItem="Got-sG-s11" firstAttribute="top" secondItem="1ks-Sv-Rkb" secondAttribute="bottom" constant="16" id="8ek-xF-tRd"/>
+                                    <constraint firstItem="Got-sG-s11" firstAttribute="leading" secondItem="njq-gL-AcI" secondAttribute="leading" constant="16" id="AEi-Qq-oMm"/>
+                                    <constraint firstAttribute="trailing" secondItem="1ks-Sv-Rkb" secondAttribute="trailing" constant="16" id="WZx-Yn-QO5"/>
+                                    <constraint firstItem="1ks-Sv-Rkb" firstAttribute="top" secondItem="njq-gL-AcI" secondAttribute="top" constant="16" id="au6-ca-eP2"/>
+                                    <constraint firstAttribute="trailing" secondItem="6cR-JJ-O4C" secondAttribute="trailing" constant="16" id="eW7-M7-XAr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Got-sG-s11" secondAttribute="trailing" constant="16" id="h6v-Bq-5GJ"/>
+                                    <constraint firstItem="kak-3v-MD5" firstAttribute="centerX" secondItem="njq-gL-AcI" secondAttribute="centerX" id="iIl-bx-mn5"/>
+                                    <constraint firstAttribute="trailing" secondItem="CAd-LV-rx5" secondAttribute="trailing" constant="16" id="q0q-VT-RkZ"/>
+                                    <constraint firstItem="1ks-Sv-Rkb" firstAttribute="leading" secondItem="njq-gL-AcI" secondAttribute="leading" constant="16" id="q7z-e7-eSR"/>
+                                    <constraint firstItem="CAd-LV-rx5" firstAttribute="leading" secondItem="njq-gL-AcI" secondAttribute="leading" constant="16" id="rRD-T6-NqZ"/>
+                                    <constraint firstItem="6cR-JJ-O4C" firstAttribute="top" secondItem="Got-sG-s11" secondAttribute="bottom" constant="16" id="sfk-tk-e7G"/>
+                                    <constraint firstItem="kak-3v-MD5" firstAttribute="top" secondItem="1ks-Sv-Rkb" secondAttribute="bottom" constant="4" id="uuK-57-jXW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q6K-EO-hCb" firstAttribute="trailing" secondItem="c96-lM-vox" secondAttribute="trailing" constant="15" id="5iU-1M-piM"/>
+                            <constraint firstItem="Q6K-EO-hCb" firstAttribute="trailing" secondItem="njq-gL-AcI" secondAttribute="trailing" constant="15" id="60f-aX-KrP"/>
+                            <constraint firstItem="njq-gL-AcI" firstAttribute="leading" secondItem="Q6K-EO-hCb" secondAttribute="leading" constant="15" id="Cha-fx-yVw"/>
+                            <constraint firstItem="c96-lM-vox" firstAttribute="leading" secondItem="Q6K-EO-hCb" secondAttribute="leading" constant="15" id="RBR-uJ-BAn"/>
+                            <constraint firstItem="njq-gL-AcI" firstAttribute="top" secondItem="c96-lM-vox" secondAttribute="bottom" constant="10" id="jOH-J9-H3G"/>
+                            <constraint firstItem="c96-lM-vox" firstAttribute="top" secondItem="Q6K-EO-hCb" secondAttribute="top" constant="20" id="yzK-qR-lgB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q6K-EO-hCb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3CJ-QG-rlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.985507246377" y="1137.7232142857142"/>
+        </scene>
+        <!--Prices Controller-->
+        <scene sceneID="72a-Hw-27u">
+            <objects>
+                <viewController id="4Ln-kU-qPE" customClass="PricesController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7KE-OO-g6g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DA7-pi-lAJ">
+                                <rect key="frame" x="67" y="263" width="280" height="370"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="370" id="7hb-2A-1Yz"/>
+                                    <constraint firstAttribute="width" constant="280" id="MXT-Bc-6gM"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CHU-rP-OCt">
+                                    <size key="itemSize" width="258" height="370"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="priceCell" id="4qM-ud-605" customClass="PriceCell" customModule="punto_medico_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="370"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="370"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efX-GW-bSY" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="370"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BÁSICO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPS-X7-tdk">
+                                                            <rect key="frame" x="10" y="25" width="238" height="29"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Bs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvA-f0-tXS">
+                                                            <rect key="frame" x="10" y="54" width="238" height="86"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
+                                                            <color key="textColor" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="80Y-Tc-mI2">
+                                                            <rect key="frame" x="10" y="140" width="238" height="220"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <prototypes>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="priceFeaturesCell" id="cvo-QV-8ME" customClass="PriceFeaturesCell" customModule="punto_medico_ios" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="28" width="238" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvo-QV-8ME" id="02f-lC-4gV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="238" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVI-gv-GQy">
+                                                                                <rect key="frame" x="32.5" y="11" width="173.5" height="22"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 fotos por 15 dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-F3-l9i">
+                                                                                        <rect key="frame" x="24" y="0.0" width="149.5" height="22"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_check_box_black_24pt" translatesAutoresizingMaskIntoConstraints="NO" id="YUx-LR-a6B">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="5uW-F3-l9i" secondAttribute="bottom" id="3Eh-SX-fRw"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="5uW-F3-l9i" secondAttribute="trailing" id="7Uf-ar-dVx"/>
+                                                                                    <constraint firstItem="YUx-LR-a6B" firstAttribute="leading" secondItem="IVI-gv-GQy" secondAttribute="leading" id="ELt-2j-da9"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="YUx-LR-a6B" secondAttribute="bottom" id="b3u-AQ-MkH"/>
+                                                                                    <constraint firstItem="5uW-F3-l9i" firstAttribute="top" secondItem="IVI-gv-GQy" secondAttribute="top" id="iHz-u3-lEE"/>
+                                                                                    <constraint firstItem="5uW-F3-l9i" firstAttribute="leading" secondItem="YUx-LR-a6B" secondAttribute="trailing" id="r1p-8u-ZRy"/>
+                                                                                    <constraint firstItem="YUx-LR-a6B" firstAttribute="top" secondItem="IVI-gv-GQy" secondAttribute="top" id="xwF-3W-ko1"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="IVI-gv-GQy" firstAttribute="centerX" secondItem="02f-lC-4gV" secondAttribute="centerX" id="0aR-yF-qAt"/>
+                                                                            <constraint firstItem="IVI-gv-GQy" firstAttribute="top" secondItem="02f-lC-4gV" secondAttribute="topMargin" id="6Yb-cZ-Et3"/>
+                                                                            <constraint firstItem="IVI-gv-GQy" firstAttribute="bottom" secondItem="02f-lC-4gV" secondAttribute="bottomMargin" id="Qzf-Z9-7C3"/>
+                                                                        </constraints>
+                                                                    </tableViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="checkbox" destination="YUx-LR-a6B" id="XQe-pa-Nun"/>
+                                                                        <outlet property="lbDescription" destination="5uW-F3-l9i" id="dXt-rg-eOw"/>
+                                                                    </connections>
+                                                                </tableViewCell>
+                                                            </prototypes>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="4Ln-kU-qPE" id="7ea-Xy-iUW"/>
+                                                                <outlet property="delegate" destination="4Ln-kU-qPE" id="Lhj-PJ-3eo"/>
+                                                            </connections>
+                                                        </tableView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wvA-f0-tXS" firstAttribute="top" secondItem="bPS-X7-tdk" secondAttribute="bottom" id="2xd-va-miZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wvA-f0-tXS" secondAttribute="trailing" constant="10" id="EFV-3g-cki"/>
+                                                        <constraint firstItem="bPS-X7-tdk" firstAttribute="top" secondItem="efX-GW-bSY" secondAttribute="top" constant="25" id="cDB-7c-xYd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bPS-X7-tdk" secondAttribute="trailing" constant="10" id="cZA-ZN-aa2"/>
+                                                        <constraint firstItem="80Y-Tc-mI2" firstAttribute="top" secondItem="wvA-f0-tXS" secondAttribute="bottom" id="ilV-G9-eKx"/>
+                                                        <constraint firstItem="wvA-f0-tXS" firstAttribute="leading" secondItem="efX-GW-bSY" secondAttribute="leading" constant="10" id="jde-oU-UID"/>
+                                                        <constraint firstItem="80Y-Tc-mI2" firstAttribute="leading" secondItem="efX-GW-bSY" secondAttribute="leading" constant="10" id="k0W-cE-sA5"/>
+                                                        <constraint firstAttribute="bottom" secondItem="80Y-Tc-mI2" secondAttribute="bottom" constant="10" id="mfI-gZ-uBs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="80Y-Tc-mI2" secondAttribute="trailing" constant="10" id="nOB-lS-gfe"/>
+                                                        <constraint firstItem="bPS-X7-tdk" firstAttribute="leading" secondItem="efX-GW-bSY" secondAttribute="leading" constant="10" id="nre-jz-Ccc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="efX-GW-bSY" secondAttribute="trailing" id="a8y-KL-PUr"/>
+                                            <constraint firstItem="efX-GW-bSY" firstAttribute="top" secondItem="4qM-ud-605" secondAttribute="top" id="cK1-Ba-ixm"/>
+                                            <constraint firstAttribute="bottom" secondItem="efX-GW-bSY" secondAttribute="bottom" id="dXf-Ux-UI3"/>
+                                            <constraint firstItem="efX-GW-bSY" firstAttribute="leading" secondItem="4qM-ud-605" secondAttribute="leading" id="mMr-tu-HI4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="lbPrice" destination="wvA-f0-tXS" id="4pp-HJ-XZx"/>
+                                            <outlet property="lbTitle" destination="bPS-X7-tdk" id="K56-0e-chC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Ln-kU-qPE" id="MsX-bK-Zwc"/>
+                                    <outlet property="delegate" destination="4Ln-kU-qPE" id="tSq-2B-xCa"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DA7-pi-lAJ" firstAttribute="centerY" secondItem="7KE-OO-g6g" secondAttribute="centerY" id="0hA-xe-Bvw"/>
+                            <constraint firstItem="DA7-pi-lAJ" firstAttribute="centerX" secondItem="7KE-OO-g6g" secondAttribute="centerX" id="lIB-Xf-5js"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gdX-Ql-375"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSM-Bt-Gdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2698.5507246376815" y="1133.7053571428571"/>
+        </scene>
+        <!--Catalog Controller-->
+        <scene sceneID="f0p-ov-EbD">
+            <objects>
+                <viewController id="B9B-Bc-qqS" customClass="CatalogController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g08-mI-ZXm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAC-WS-Oq3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido a Punto Médico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4R-bA-peD">
+                                        <rect key="frame" x="16" y="0.0" width="398" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XKs-KN-Zsp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world_map" translatesAutoresizingMaskIntoConstraints="NO" id="wix-av-bfG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="53s-4Z-ub0"/>
+                                    <constraint firstItem="D4R-bA-peD" firstAttribute="top" secondItem="cAC-WS-Oq3" secondAttribute="top" id="7ux-Fk-mbM"/>
+                                    <constraint firstAttribute="bottom" secondItem="wix-av-bfG" secondAttribute="bottom" id="GEQ-w3-EtI"/>
+                                    <constraint firstAttribute="trailing" secondItem="wix-av-bfG" secondAttribute="trailing" id="MvP-ES-YZB"/>
+                                    <constraint firstItem="D4R-bA-peD" firstAttribute="leading" secondItem="cAC-WS-Oq3" secondAttribute="leading" constant="16" id="Tqw-2L-E9c"/>
+                                    <constraint firstItem="wix-av-bfG" firstAttribute="top" secondItem="cAC-WS-Oq3" secondAttribute="top" id="UYv-Ol-K9y"/>
+                                    <constraint firstItem="wix-av-bfG" firstAttribute="leading" secondItem="cAC-WS-Oq3" secondAttribute="leading" id="r3U-4X-WCG"/>
+                                    <constraint firstAttribute="trailing" secondItem="D4R-bA-peD" secondAttribute="trailing" id="rqp-jY-pzA"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9br-a4-89I">
+                                <rect key="frame" x="10" y="199" width="394" height="663"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yqO-mR-DK6">
+                                    <size key="itemSize" width="180" height="220"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="catalogCell" id="SmM-Uz-5WB" customClass="CatalogCell" customModule="punto_medico_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ib-yg-2ZQ" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="10" width="180" height="219.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_shop_11" translatesAutoresizingMaskIntoConstraints="NO" id="9d3-Im-yiw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="150" id="z9Y-7H-FP4"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQo-uE-0JF">
+                                                            <rect key="frame" x="10" y="160" width="160" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-xg-kRr" customClass="CosmosView" customModule="Cosmos">
+                                                            <rect key="frame" x="10" y="192.5" width="93" height="12"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 80.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-YY-VBe">
+                                                            <rect key="frame" x="113" y="189.5" width="57" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.52156862745098043" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="5FX-YY-VBe" firstAttribute="leading" secondItem="hGn-xg-kRr" secondAttribute="trailing" constant="10" id="9u4-Ly-YRs"/>
+                                                        <constraint firstItem="9d3-Im-yiw" firstAttribute="leading" secondItem="0ib-yg-2ZQ" secondAttribute="leading" id="BOj-hs-I2l"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5FX-YY-VBe" secondAttribute="bottom" constant="10" id="CCE-Zf-uYb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SQo-uE-0JF" secondAttribute="trailing" constant="10" id="JFx-hG-C94"/>
+                                                        <constraint firstItem="SQo-uE-0JF" firstAttribute="leading" secondItem="0ib-yg-2ZQ" secondAttribute="leading" constant="10" id="KZC-Xu-dRZ"/>
+                                                        <constraint firstItem="5FX-YY-VBe" firstAttribute="top" secondItem="SQo-uE-0JF" secondAttribute="bottom" constant="10" id="Sbk-LH-GNy"/>
+                                                        <constraint firstItem="SQo-uE-0JF" firstAttribute="top" secondItem="9d3-Im-yiw" secondAttribute="bottom" constant="10" id="Ydo-zR-KnF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5FX-YY-VBe" secondAttribute="trailing" constant="10" id="Ylc-nV-RUr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hGn-xg-kRr" secondAttribute="bottom" constant="15" id="azf-Sy-Z87"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9d3-Im-yiw" secondAttribute="trailing" id="cNY-it-vNb"/>
+                                                        <constraint firstItem="hGn-xg-kRr" firstAttribute="leading" secondItem="0ib-yg-2ZQ" secondAttribute="leading" constant="10" id="igD-lJ-5Am"/>
+                                                        <constraint firstItem="9d3-Im-yiw" firstAttribute="top" secondItem="0ib-yg-2ZQ" secondAttribute="top" id="l9b-NM-r3F"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="0ib-yg-2ZQ" firstAttribute="top" secondItem="SmM-Uz-5WB" secondAttribute="top" constant="10" id="3kT-iF-iU3"/>
+                                            <constraint firstAttribute="trailing" secondItem="0ib-yg-2ZQ" secondAttribute="trailing" id="4dv-bu-cPK"/>
+                                            <constraint firstItem="0ib-yg-2ZQ" firstAttribute="leading" secondItem="SmM-Uz-5WB" secondAttribute="leading" id="KOY-QE-G4y"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="9d3-Im-yiw" id="2Df-wZ-8P8"/>
+                                            <outlet property="lbName" destination="SQo-uE-0JF" id="jFl-ZW-Etw"/>
+                                            <outlet property="lbPrice" destination="5FX-YY-VBe" id="VrU-6j-Lk2"/>
+                                            <outlet property="rating" destination="hGn-xg-kRr" id="Aza-fq-T3d"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="B9B-Bc-qqS" id="gOQ-xp-JJD"/>
+                                    <outlet property="delegate" destination="B9B-Bc-qqS" id="0XP-Qo-srJ"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nV9-ow-hTs" customClass="CardView" customModule="punto_medico_ios" customModuleProvider="target">
+                                <rect key="frame" x="10" y="134" width="394" height="60"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Comience a buscar" translatesAutoresizingMaskIntoConstraints="NO" id="z2s-Zd-7Dx">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="z2s-Zd-7Dx" firstAttribute="leading" secondItem="nV9-ow-hTs" secondAttribute="leading" id="19I-eh-kKX"/>
+                                    <constraint firstAttribute="trailing" secondItem="z2s-Zd-7Dx" secondAttribute="trailing" id="3Xf-07-uM6"/>
+                                    <constraint firstAttribute="height" constant="60" id="cRE-GM-mG2"/>
+                                    <constraint firstItem="z2s-Zd-7Dx" firstAttribute="top" secondItem="nV9-ow-hTs" secondAttribute="top" id="flt-O0-0KW"/>
+                                    <constraint firstAttribute="bottom" secondItem="z2s-Zd-7Dx" secondAttribute="bottom" id="z0U-y2-j8J"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nV9-ow-hTs" firstAttribute="top" secondItem="cAC-WS-Oq3" secondAttribute="bottom" constant="-30" id="7xx-lE-EZl"/>
+                            <constraint firstItem="N1A-Z7-QzW" firstAttribute="trailing" secondItem="cAC-WS-Oq3" secondAttribute="trailing" id="EuU-6o-bhu"/>
+                            <constraint firstItem="N1A-Z7-QzW" firstAttribute="bottom" secondItem="9br-a4-89I" secondAttribute="bottom" id="K0x-NI-QKs"/>
+                            <constraint firstItem="N1A-Z7-QzW" firstAttribute="trailing" secondItem="nV9-ow-hTs" secondAttribute="trailing" constant="10" id="MEY-NS-jhv"/>
+                            <constraint firstItem="9br-a4-89I" firstAttribute="top" secondItem="nV9-ow-hTs" secondAttribute="bottom" constant="5" id="ROl-pO-gWV"/>
+                            <constraint firstItem="cAC-WS-Oq3" firstAttribute="top" secondItem="N1A-Z7-QzW" secondAttribute="top" id="YuW-Ea-QId"/>
+                            <constraint firstItem="N1A-Z7-QzW" firstAttribute="trailing" secondItem="9br-a4-89I" secondAttribute="trailing" constant="10" id="jfZ-tW-3CW"/>
+                            <constraint firstItem="9br-a4-89I" firstAttribute="leading" secondItem="N1A-Z7-QzW" secondAttribute="leading" constant="10" id="kuO-se-fv8"/>
+                            <constraint firstItem="cAC-WS-Oq3" firstAttribute="leading" secondItem="N1A-Z7-QzW" secondAttribute="leading" id="yOV-rh-40x"/>
+                            <constraint firstItem="nV9-ow-hTs" firstAttribute="leading" secondItem="N1A-Z7-QzW" secondAttribute="leading" constant="10" id="z5d-R3-1va"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N1A-Z7-QzW"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchbar" destination="z2s-Zd-7Dx" id="LCd-li-xwD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="One-08-6GC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3505.7971014492755" y="1192.6339285714284"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="4IX-mC-3dH">
@@ -1496,7 +1953,19 @@
                     </view>
                     <size key="freeformSize" width="414" height="1050"/>
                     <connections>
+                        <outlet property="btnUser" destination="530-1V-8Kq" id="AEp-80-Qbw"/>
                         <outlet property="imagesCollectionView" destination="5CN-iE-iQU" id="0om-co-PsK"/>
+                        <outlet property="imgHeader" destination="BFr-k4-ZS3" id="o5u-6y-7oD"/>
+                        <outlet property="lbDateAdded" destination="Ieo-tW-SBu" id="55P-hK-euM"/>
+                        <outlet property="lbDescription" destination="ZCI-JA-dik" id="3Q9-Y5-9K5"/>
+                        <outlet property="lbHowManySeens" destination="hxP-BV-wHd" id="rX7-OS-YWR"/>
+                        <outlet property="lbPhone" destination="g2O-sk-15i" id="y2Y-uY-Lvc"/>
+                        <outlet property="lbPrice" destination="zgf-Ce-Hik" id="mmU-bz-ulP"/>
+                        <outlet property="lbRegularPrice" destination="EiU-ZF-gsh" id="Zcs-13-kdi"/>
+                        <outlet property="lbSalePrice" destination="Hg9-kg-6IG" id="r8w-wG-oh4"/>
+                        <outlet property="lbState" destination="5yK-Ry-qxE" id="w2a-ae-3e9"/>
+                        <outlet property="lbTitle" destination="5d2-4s-Ev4" id="gaL-M6-BGu"/>
+                        <outlet property="rating" destination="jXf-EX-8fD" id="Ioe-lR-mcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sU-I0-cFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1619,15 +2088,18 @@
     </scenes>
     <resources>
         <image name="baseline_chat_black_24pt" width="24" height="24"/>
+        <image name="baseline_check_box_black_24pt" width="24" height="24"/>
         <image name="baseline_email_black_24pt" width="24" height="24"/>
         <image name="baseline_phone_black_24pt" width="24" height="24"/>
         <image name="baseline_room_black_24pt" width="24" height="24"/>
         <image name="cloud_off" width="192" height="192"/>
         <image name="first" width="30" height="30"/>
+        <image name="image_shop_11" width="500" height="500"/>
         <image name="image_shop_9" width="500" height="500"/>
         <image name="logo_round" width="500" height="500"/>
         <image name="logo_small" width="200" height="200"/>
         <image name="photo_female_5" width="250" height="250"/>
         <image name="second" width="30" height="30"/>
+        <image name="world_map" width="400" height="258"/>
     </resources>
 </document>

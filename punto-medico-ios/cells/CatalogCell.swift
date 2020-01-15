@@ -1,12 +1,11 @@
+import Cosmos
 import UIKit
 
-class CatalogCell: UITableViewCell {
+class CatalogCell: UICollectionViewCell {
     
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var lbAmount: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var lbPrice: UILabel!
     
 }

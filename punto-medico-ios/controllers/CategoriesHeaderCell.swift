@@ -1,8 +1,8 @@
 import UIKit
 
-class CatalogFooterCell: UITableViewCell {
+class CategoriesHeaderCell: UITableViewCell {
 
-    @IBOutlet weak var btnShowAll: UIButton!
+    @IBOutlet weak var lbName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -10,6 +10,7 @@ class CatalogFooterCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
     }
     
 }
