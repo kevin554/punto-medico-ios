@@ -1,3 +1,6 @@
+import Alamofire
+import SVProgressHUD
+import SwiftyJSON
 import UIKit
 
 class UserProfileController: UIViewController {
@@ -20,6 +23,31 @@ class UserProfileController: UIViewController {
 
         btnMessage.tintColor = Util.colorWithHexString(hexString: "7CB342")
         btnCall.tintColor = Util.colorWithHexString(hexString: "7CB342")
+        
+        fetchProfile()
+    }
+    
+    func fetchProfile() {
+        if !Util.isNetworkConnected() {
+            Util.showAlert(title: "Parece que no hay internet.", message: "")
+            return
+        }
+        
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Cargando perfil...")
+        
+        Alamofire.request(Api.getUser(username: "rduran")).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                _ = JSON(response.data!)
+                break
+                
+            case .failure:
+                break
+            }
+            
+            SVProgressHUD.dismiss()
+        })
     }
     
     @IBAction func sendMessage(_ sender: Any) {

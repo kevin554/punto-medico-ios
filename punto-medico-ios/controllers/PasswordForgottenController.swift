@@ -1,3 +1,6 @@
+import Alamofire
+import SVProgressHUD
+import SwiftyJSON
 import UIKit
 
 class PasswordForgottenController: UIViewController {
@@ -51,6 +54,28 @@ class PasswordForgottenController: UIViewController {
             
             return
         }
+        
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Por favor, espere...")
+        
+        let parameters: Parameters = [
+            "email": "\(email)"
+        ]
+        
+//        let headers : HTTPHeaders = ["Authorization": "Bearer \(Util.getToken()!)", "Accept": "application/json"]
+        
+        Alamofire.request(Api.PASSWORD_FORGOTTEN, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                _ = JSON(response.data!)
+                break
+                
+            case .failure:
+                break
+            }
+            
+            SVProgressHUD.dismiss()
+        })
     }
     
     /* hide the keyboard, if the user touches anything but a textfield */

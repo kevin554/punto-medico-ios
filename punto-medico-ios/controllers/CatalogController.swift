@@ -1,3 +1,6 @@
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 import UIKit
 
 class CatalogController: UIViewController {
@@ -28,6 +31,30 @@ class CatalogController: UIViewController {
             }
         }
 
+        fetchCatalog()
+    }
+    
+    func fetchCatalog() {
+        if !Util.isNetworkConnected() {
+            Util.showAlert(title: "Parece que no hay internet.", message: "")
+            return
+        }
+        
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Obteniendo catálogo...")
+        
+        Alamofire.request(Api.getCatalog()).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                _ = JSON(response.data!)
+                break
+                
+            case .failure:
+                break
+            }
+            
+            SVProgressHUD.dismiss()
+        })
     }
     
     @objc
@@ -38,7 +65,7 @@ class CatalogController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
             
             if !Util.isNetworkConnected() {
-                Util.showAlert(title: "Parece que no hay internet", message: "")
+                Util.showAlert(title: "Parece que no hay internet.", message: "")
                 self.refresher.endRefreshing()
                 
                 return

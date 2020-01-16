@@ -1,3 +1,6 @@
+import Alamofire
+import SVProgressHUD
+import SwiftyJSON
 import UIKit
 
 class LoginController: UIViewController {
@@ -63,7 +66,33 @@ class LoginController: UIViewController {
     }
         
     func login(username:String, password:String) {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Por favor, espere...")
         
+        let parameters: Parameters = [
+            "username": "\(username)",
+            "password": "\(password)"
+        ]
+        
+        //        let headers : HTTPHeaders = ["Authorization": "Bearer \(Util.getToken()!)", "Accept": "application/json"]
+        
+        Alamofire.request(Api.LOGIN, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                _ = JSON(response.data!)
+                self.replaceLoginWithProfileScreen()
+                
+                break
+                
+            case .failure:
+                break
+            }
+            
+            SVProgressHUD.dismiss()
+        })
+    }
+    
+    func replaceLoginWithProfileScreen() {
         if let tabBarController = self.tabBarController {
             let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
             

@@ -1,3 +1,6 @@
+import Alamofire
+import SVProgressHUD
+import SwiftyJSON
 import UIKit
 
 class RegisterController: UIViewController {
@@ -74,14 +77,45 @@ class RegisterController: UIViewController {
             return
         }
         
-        register(username: username, email: email, password: password, passwordConfirmed: passwordConfirmed)
+        register(username: username, email: email, password: password)
     }
     
-    func register(username:String, email:String, password:String, passwordConfirmed:String) {
+    func register(username:String, email:String, password:String) {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Por favor, espere...")
         
+        let parameters: Parameters = [
+            "username": "\(username)",
+            "email": "\(email)",
+            "password": "\(password)"
+        ]
+        
+//        let headers : HTTPHeaders = ["Authorization": "Bearer \(Util.getToken()!)", "Accept": "application/json"]
+        
+        Alamofire.request(Api.REGISTER, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                _ = JSON(response.data!)
+                self.replaceLoginWithProfileScreen()
+                
+                break
+                
+            case .failure:
+                break
+            }
+            
+            SVProgressHUD.dismiss()
+        })
+    }
+    
+    func replaceLoginWithProfileScreen() {
         if let tabBarController = self.tabBarController {
             let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
-            tabBarController.viewControllers![0] = first
+            
+            let navigationController = UINavigationController(rootViewController: first)
+            
+            tabBarController.viewControllers![0] = navigationController
+            tabBarController.viewControllers![0].title = "Mi perfil"
         }
     }
     

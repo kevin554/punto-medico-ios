@@ -13,11 +13,7 @@ class CategoriesController: UIViewController {
         
 //        navigationController?.navigationBar.tintColor = .white
         categoriesTableView.tableFooterView = UIView(frame: CGRect.zero)
-        
-//        if let tabBarController = self.tabBarController {
-//            let first = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-//            tabBarController.viewControllers![0] = first
-//        }
+   
 //        fetchCategories()
     }
     
@@ -29,7 +25,7 @@ class CategoriesController: UIViewController {
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show(withStatus: "Obteniendo catálogo")
         
-        Alamofire.request("https://jsonmock.com/api/get/KqFinHVQ6WgX0PRnc8Uglg8p66zGN9Lz").responseJSON(completionHandler: { response in
+        Alamofire.request(Api.CATEGORIES).responseJSON(completionHandler: { response in
             switch response.result {
             case .success:
                 let apiResponse = JSON(response.data!)
