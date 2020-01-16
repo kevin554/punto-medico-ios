@@ -1060,6 +1060,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="B9B-Bc-qqS" id="kt7-fb-LZW"/>
+                                        </connections>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1096,6 +1099,7 @@
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="g5m-i5-lxq"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="catalogCollectionView" destination="9br-a4-89I" id="i4b-G8-71N"/>
                         <outlet property="searchbar" destination="z2s-Zd-7Dx" id="LCd-li-xwD"/>
                         <segue destination="6LK-em-rFU" kind="show" identifier="ItemDetail" id="8o7-Qc-UqW"/>
                     </connections>
@@ -1920,7 +1924,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="punto_medico_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

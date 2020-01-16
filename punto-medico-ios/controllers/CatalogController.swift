@@ -2,19 +2,64 @@ import UIKit
 
 class CatalogController: UIViewController {
 
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(confirmLoadMore), for: .valueChanged)
+        
+        return refreshControl
+    }()
+    
     @IBOutlet weak var searchbar: UISearchBar!
+    @IBOutlet weak var catalogCollectionView: UICollectionView!
     var fetchingMore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbar.backgroundImage = UIImage()
         
-        // TODO: if the user is logged
-//        if let tabBarController = self.tabBarController {
-//            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
-//            tabBarController.viewControllers![0] = first
-//            tabBarController.viewControllers![0].title = "Mi perfil"
-//        }
+        catalogCollectionView.refreshControl = refresher
+        
+        if !UserData.getProfileData()!.isEmpty {
+            if let tabBarController = self.tabBarController {
+                let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
+                
+                tabBarController.viewControllers![0] = first
+                tabBarController.viewControllers![0].title = "Mi perfil"
+            }
+        }
+
+    }
+    
+    @objc
+    func confirmLoadMore() {
+        let alert = UIAlertController(title: "¿Desea actualizar el catálogo?", message: "", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+            if !Util.isNetworkConnected() {
+                Util.showAlert(title: "Parece que no hay internet", message: "")
+                self.refresher.endRefreshing()
+                
+                return
+            }
+            
+            self.loadMore()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.refresher.endRefreshing()
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func loadMore() {
+        self.refresher.endRefreshing()
     }
 
 }
@@ -54,12 +99,12 @@ extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegat
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        print("offsetY: \(offsetY) | contentHeight: \(contentHeight)")
+//        print("offsetY: \(offsetY) | contentHeight: \(contentHeight)")
         
         if offsetY > contentHeight - scrollView.frame.height { // * 4
             if !fetchingMore {
                 fetchingMore = true
-                print("begin batch fetch!")
+//                print("begin batch fetch!")
             }
             
         }
@@ -72,6 +117,14 @@ extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegat
 //        let vc = segue.destination as! SubjectAcademicRecordController
 //        vc.subject = sender as! Subject
 //    }
+    
+}
+
+extension CatalogController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        print("search for \(searchText)")
+    }
     
 }
 

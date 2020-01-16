@@ -43,6 +43,7 @@
 		74BAB92D23CBF27700DD1597 /* NoInternetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB92C23CBF27700DD1597 /* NoInternetController.swift */; };
 		74D8936723D0054000A1BD18 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8936623D0054000A1BD18 /* UserData.swift */; };
 		74D8936923D0062F00A1BD18 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8936823D0062F00A1BD18 /* Api.swift */; };
+		74D8936B23D0189F00A1BD18 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8936A23D0189F00A1BD18 /* TabBarController.swift */; };
 		DAD7D757F1AA0C29DFD24718 /* Pods_punto_medico_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841D3F6EBDE87A64598E4C90 /* Pods_punto_medico_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		74BAB92C23CBF27700DD1597 /* NoInternetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetController.swift; sourceTree = "<group>"; };
 		74D8936623D0054000A1BD18 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		74D8936823D0062F00A1BD18 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		74D8936A23D0189F00A1BD18 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		841D3F6EBDE87A64598E4C90 /* Pods_punto_medico_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_punto_medico_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF3F65BCA2F1B3D01E1DE9 /* Pods-punto-medico-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-punto-medico-ios.debug.xcconfig"; path = "Target Support Files/Pods-punto-medico-ios/Pods-punto-medico-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 				7467F12823CF589B007ABA79 /* ProfileController.swift */,
 				74BAB91F23CBD34700DD1597 /* RegisterController.swift */,
 				7422D61023CBFDEA0079ABDC /* UserProfileController.swift */,
+				74D8936A23D0189F00A1BD18 /* TabBarController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				74BAB92623CBE3B600DD1597 /* PasswordForgottenController.swift in Sources */,
 				74BAB92B23CBEB8100DD1597 /* Util.swift in Sources */,
 				74D8936723D0054000A1BD18 /* UserData.swift in Sources */,
+				74D8936B23D0189F00A1BD18 /* TabBarController.swift in Sources */,
 				744E5B1323CD248600FC1853 /* ItemImagesCell.swift in Sources */,
 				744E5B1923CDF2E100FC1853 /* PricesController.swift in Sources */,
 				74D8936923D0062F00A1BD18 /* Api.swift in Sources */,
