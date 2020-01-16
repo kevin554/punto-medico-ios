@@ -11,6 +11,5 @@ target 'punto-medico-ios' do
   pod 'PasswordTextField'
   pod 'GoogleMaps'
   pod 'Cosmos', '~> 20.0'
-  pod 'RAMAnimatedTabBarController'
 
 end

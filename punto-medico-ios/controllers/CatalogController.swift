@@ -3,6 +3,7 @@ import UIKit
 class CatalogController: UIViewController {
 
     @IBOutlet weak var searchbar: UISearchBar!
+    var fetchingMore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,21 @@ extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegat
     @objc
     func handleCardTap(recognizer: UITapGestureRecognizer) {
         performSegue(withIdentifier: "ItemDetail", sender: nil)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        print("offsetY: \(offsetY) | contentHeight: \(contentHeight)")
+        
+        if offsetY > contentHeight - scrollView.frame.height { // * 4
+            if !fetchingMore {
+                fetchingMore = true
+                print("begin batch fetch!")
+            }
+            
+        }
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
