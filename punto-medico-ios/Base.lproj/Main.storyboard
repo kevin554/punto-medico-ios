@@ -1042,8 +1042,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="image" destination="9d3-Im-yiw" id="2Df-wZ-8P8"/>
-                                            <outlet property="lbName" destination="SQo-uE-0JF" id="jFl-ZW-Etw"/>
                                             <outlet property="lbPrice" destination="5FX-YY-VBe" id="VrU-6j-Lk2"/>
+                                            <outlet property="lbTitle" destination="SQo-uE-0JF" id="jFl-ZW-Etw"/>
                                             <outlet property="rating" destination="hGn-xg-kRr" id="Aza-fq-T3d"/>
                                         </connections>
                                     </collectionViewCell>
