@@ -17,10 +17,16 @@ class ItemDetailController: UIViewController {
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var lbHowManySeens: UILabel!
     
-    var imageArray = [UIImage(named: "image_shop_9"), UIImage(named: "image_shop_10"), UIImage(named: "image_shop_11"), UIImage(named: "image_shop_12")]
+    var imageArray = ["image_shop_9", "image_shop_10", "image_shop_11", "image_shop_12"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        /* data:image/png;base64, */
+//        let strBase64 = ""
+//        let dataDecoded:NSData = NSData(base64Encoded: strBase64, options: NSData.Base64DecodingOptions(rawValue: 0))!
+//        let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
     }
 
 }
@@ -34,9 +40,16 @@ extension ItemDetailController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemImagesCell", for: indexPath) as! ItemImagesCell
         
-        cell.image.image = imageArray[indexPath.row]
+        cell.image.image = UIImage(named: imageArray[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ImageDetail") as? ImageDetailController {
+            vc.image = imageArray[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

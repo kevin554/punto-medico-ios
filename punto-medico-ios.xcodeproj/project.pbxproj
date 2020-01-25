@@ -26,6 +26,9 @@
 		744E5B1B23CDF44100FC1853 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B1A23CDF44000FC1853 /* PriceCell.swift */; };
 		744E5B1D23CDF58D00FC1853 /* PriceFeaturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E5B1C23CDF58D00FC1853 /* PriceFeaturesCell.swift */; };
 		7467F12923CF589B007ABA79 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7467F12823CF589B007ABA79 /* ProfileController.swift */; };
+		746DC68D23D904F000A2DEFF /* ImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DC68C23D904F000A2DEFF /* ImageTextField.swift */; };
+		746DC68F23D91A7F00A2DEFF /* PublishNewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DC68E23D91A7F00A2DEFF /* PublishNewItemController.swift */; };
+		7473C2B823DCFFD4004ED505 /* ImageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473C2B723DCFFD4004ED505 /* ImageDetailController.swift */; };
 		748AE6C323CE1A1D0016B9FE /* CatalogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748AE6C223CE1A1D0016B9FE /* CatalogController.swift */; };
 		748AE6C523CE205D0016B9FE /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748AE6C423CE205D0016B9FE /* CatalogCell.swift */; };
 		74BAB8EE23CBD20500DD1597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BAB8ED23CBD20500DD1597 /* AppDelegate.swift */; };
@@ -85,6 +88,9 @@
 		744E5B1A23CDF44000FC1853 /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		744E5B1C23CDF58D00FC1853 /* PriceFeaturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFeaturesCell.swift; sourceTree = "<group>"; };
 		7467F12823CF589B007ABA79 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		746DC68C23D904F000A2DEFF /* ImageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextField.swift; sourceTree = "<group>"; };
+		746DC68E23D91A7F00A2DEFF /* PublishNewItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishNewItemController.swift; sourceTree = "<group>"; };
+		7473C2B723DCFFD4004ED505 /* ImageDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailController.swift; sourceTree = "<group>"; };
 		748AE6C223CE1A1D0016B9FE /* CatalogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogController.swift; sourceTree = "<group>"; };
 		748AE6C423CE205D0016B9FE /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		74BAB8EA23CBD20500DD1597 /* punto-medico-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "punto-medico-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,9 +249,11 @@
 				74BAB92523CBE3B600DD1597 /* PasswordForgottenController.swift */,
 				744E5B1823CDF2E100FC1853 /* PricesController.swift */,
 				7467F12823CF589B007ABA79 /* ProfileController.swift */,
+				746DC68E23D91A7F00A2DEFF /* PublishNewItemController.swift */,
 				74BAB91F23CBD34700DD1597 /* RegisterController.swift */,
-				7422D61023CBFDEA0079ABDC /* UserProfileController.swift */,
 				74D8936A23D0189F00A1BD18 /* TabBarController.swift */,
+				7422D61023CBFDEA0079ABDC /* UserProfileController.swift */,
+				7473C2B723DCFFD4004ED505 /* ImageDetailController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				74BAB92123CBD48800DD1597 /* RoundButton.swift */,
 				74BAB92323CBD4AC00DD1597 /* UIColor.swift */,
 				74BAB92723CBE50C00DD1597 /* CardView.swift */,
+				746DC68C23D904F000A2DEFF /* ImageTextField.swift */,
 			);
 			path = design;
 			sourceTree = "<group>";
@@ -482,16 +491,19 @@
 				744E5B1923CDF2E100FC1853 /* PricesController.swift in Sources */,
 				74D8936923D0062F00A1BD18 /* Api.swift in Sources */,
 				74BAB92023CBD34700DD1597 /* RegisterController.swift in Sources */,
+				7473C2B823DCFFD4004ED505 /* ImageDetailController.swift in Sources */,
 				7422D61E23CCD5200079ABDC /* CategoriesHeaderCell.swift in Sources */,
 				748AE6C323CE1A1D0016B9FE /* CatalogController.swift in Sources */,
 				744E5B1D23CDF58D00FC1853 /* PriceFeaturesCell.swift in Sources */,
 				74BAB92423CBD4AC00DD1597 /* UIColor.swift in Sources */,
 				74BAB92223CBD48800DD1597 /* RoundButton.swift in Sources */,
+				746DC68F23D91A7F00A2DEFF /* PublishNewItemController.swift in Sources */,
 				744E5B0D23CCE64E00FC1853 /* LoginController.swift in Sources */,
 				7422D61323CC9FE00079ABDC /* CategoriesController.swift in Sources */,
 				744E5B0F23CD08E900FC1853 /* ContactUsController.swift in Sources */,
 				74BAB8EE23CBD20500DD1597 /* AppDelegate.swift in Sources */,
 				744E5B1B23CDF44100FC1853 /* PriceCell.swift in Sources */,
+				746DC68D23D904F000A2DEFF /* ImageTextField.swift in Sources */,
 				7422D60F23CBFD820079ABDC /* Reachability.swift in Sources */,
 				744E5B1123CD17E700FC1853 /* ItemDetailController.swift in Sources */,
 				7422D61623CCA9FF0079ABDC /* CategoriesCell.swift in Sources */,

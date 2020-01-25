@@ -16,13 +16,6 @@ class ProfileController: UIViewController {
 
         btnLogOut.imageView?.image = btnLogOut.imageView?.image?.withRenderingMode(.alwaysTemplate)
         btnLogOut.tintColor = Util.colorWithHexString(hexString: "7CB342")
-        
-        let button = UIBarButtonItem(image: UIImage(named: "baseline_add_black_24pt"), style: .plain, target: self, action: #selector(addTapped))
-        navigationItem.rightBarButtonItem = button
-    }
-    
-    @objc func addTapped(sender: AnyObject) {
-        
     }
     
     @IBAction func confirmLogOut(_ sender: Any) {
@@ -45,12 +38,8 @@ class ProfileController: UIViewController {
     
     func logOut() {
         if let tabBarController = self.tabBarController {
-            let first = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-            
-            let navigationController = UINavigationController(rootViewController: first)
-            navigationController.title = "Login"
-            
-            tabBarController.viewControllers![0] = navigationController
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
+            tabBarController.viewControllers![0] = first!
         }
     }
     

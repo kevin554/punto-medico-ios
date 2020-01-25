@@ -21,25 +21,8 @@ class LoginController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-    
-    @objc func keyboardWillChange(notification: Notification) {
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        
-        view.frame.origin.y = -keyboardRect.height
-    }
-    
-    @objc func hideKeyboard(notification: Notification) {
-        view.frame.origin.y = 0
-    }
-    
     @IBAction func validateLogin(_ sender: Any) {
+        if 1 == 1 { self.replaceLoginWithProfileScreen(); return; }
         let username:String = tfUsername.text!
         let password:String = tfPassword.text!
         
@@ -94,13 +77,27 @@ class LoginController: UIViewController {
     
     func replaceLoginWithProfileScreen() {
         if let tabBarController = self.tabBarController {
-            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
-            
-            let navigationController = UINavigationController(rootViewController: first)
-            
-            tabBarController.viewControllers![0] = navigationController
-            tabBarController.viewControllers![0].title = "Mi perfil"
+            let first = self.storyboard?.instantiateViewController(withIdentifier: "ProfileController")
+            tabBarController.viewControllers![0] = first!
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        view.frame.origin.y = -keyboardRect.height
+    }
+    
+    @objc func hideKeyboard(notification: Notification) {
+        view.frame.origin.y = 0
     }
     
     /* hide the keyboard, if the user touches anything but a textfield */
