@@ -7,7 +7,7 @@ class CatalogController: UIViewController {
 
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(confirmLoadMore), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(confirmRefresh), for: .valueChanged)
         
         return refreshControl
     }()
@@ -58,7 +58,7 @@ class CatalogController: UIViewController {
     }
     
     @objc
-    func confirmLoadMore() {
+    func confirmRefresh() {
         let alert = UIAlertController(title: "¿Desea actualizar el catálogo?", message: "", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
@@ -71,7 +71,7 @@ class CatalogController: UIViewController {
                 return
             }
             
-            self.loadMore()
+            self.refresh()
         })
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: { (action) in
@@ -82,13 +82,20 @@ class CatalogController: UIViewController {
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        })
     }
     
-    func loadMore() {
+    func refresh() {
         self.refresher.endRefreshing()
     }
 
+    @objc private func alertControllerBackgroundTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension CatalogController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

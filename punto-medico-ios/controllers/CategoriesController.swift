@@ -5,6 +5,13 @@ import UIKit
 
 class CategoriesController: UIViewController {
     
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(confirmRefresh), for: .valueChanged)
+        
+        return refreshControl
+    }()
+    
     @IBOutlet weak var categoriesTableView: UITableView!
     var list:[JSON] = []
     
@@ -23,7 +30,7 @@ class CategoriesController: UIViewController {
         }
         
         SVProgressHUD.setDefaultMaskType(.black)
-        SVProgressHUD.show(withStatus: "Obteniendo catálogo")
+        SVProgressHUD.show(withStatus: "Obteniendo categorías")
         
         Alamofire.request(Api.CATEGORIES).responseJSON(completionHandler: { response in
             switch response.result {
@@ -41,6 +48,41 @@ class CategoriesController: UIViewController {
             
             SVProgressHUD.dismiss()
         })
+    }
+    
+    @objc
+    func confirmRefresh() {
+        let alert = UIAlertController(title: "¿Desea actualizar las categorías?", message: "", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+            if !Util.isNetworkConnected() {
+                Util.showAlert(title: "Parece que no hay internet.", message: "")
+                self.refresher.endRefreshing()
+                
+                return
+            }
+            
+            self.fetchCategories()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.refresher.endRefreshing()
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: {
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        })
+    }
+    
+    @objc private func alertControllerBackgroundTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

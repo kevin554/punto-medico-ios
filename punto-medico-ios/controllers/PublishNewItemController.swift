@@ -4,7 +4,7 @@ import SVProgressHUD
 import SwiftyJSON
 import UIKit
 
-class PublishNewItemController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PublishNewItemController: UIViewController {
 
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var descTF: UITextField!
@@ -33,24 +33,9 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            
-            if imageArray[safe: selectingImageAtPos] != nil {
-                imageArray[selectingImageAtPos] = image
-            } else {
-                imageArray.insert(image, at: selectingImageAtPos)
-            }
-                        
-            imagesCollectionView.reloadData()
-        } else {
-            // Error message
-        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func validateForm(_ sender: Any) {
+        let IMAGE_SIZE = 300000 // max 300kb
+        let BASE_64_JPEG = "data:image/jpeg;base64,"
         let title = titleTF.text!
         let desc = descTF.text!
         let tags = tagsTF.text!
@@ -59,8 +44,7 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
         let phone = phoneTF.text!
         let address = addressTF.text!
         let state = newRB.isSelected ? "Nuevo" : (usedRB.isSelected ? "Usado" : "")
-        var firstImage = ""
-        var secondImage = ""
+        var imagesB64 = [String]()
         
         if title.isEmpty {
             Util.showAlert(title: "Debe colocar un título.", message: "")
@@ -93,19 +77,27 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
         }
         
         if imageArray[safe: 0] != nil {
-            let imageData = imageArray[0].pngData()
-            firstImage = imageData!.base64EncodedString(options: .lineLength64Characters)
+//            let imageData = imageArray[1].pngData()
+//            firstImage = imageData!.base64EncodedString(options: .lineLength64Characters)
+            imagesB64.append(BASE_64_JPEG + imageArray[0].resizeByByte(maxByte: IMAGE_SIZE))
         }
         
         if imageArray[safe: 1] != nil {
-            let imageData = imageArray[1].pngData()
-            secondImage = imageData!.base64EncodedString(options: .lineLength64Characters)
+            imagesB64.append(BASE_64_JPEG + imageArray[1].resizeByByte(maxByte: IMAGE_SIZE))
         }
         
-        submitForm(title: title, desc: desc, tags: tags, salePrice: salePrice, regularPrice: regularPrice, phone: phone, address: address, state: state)
+        if imageArray[safe: 2] != nil {
+            imagesB64.append(BASE_64_JPEG + imageArray[2].resizeByByte(maxByte: IMAGE_SIZE))
+        }
+        
+        if imageArray[safe: 3] != nil {
+            imagesB64.append(BASE_64_JPEG + imageArray[3].resizeByByte(maxByte: IMAGE_SIZE))
+        }
+        
+        submitForm(title: title, desc: desc, tags: tags, salePrice: salePrice, regularPrice: regularPrice, phone: phone, address: address, state: state, images: imagesB64, category: selectedCategory, subcategory: "")
     }
     
-    func submitForm(title:String, desc:String, tags:String, salePrice:String, regularPrice:String, phone:String, address:String, state:String) {
+    func submitForm(title:String, desc:String, tags:String, salePrice:String, regularPrice:String, phone:String, address:String, state:String, images:[String], category: String, subcategory: String) {
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show(withStatus: "Por favor, espere...")
         
@@ -115,9 +107,15 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
             "tags": "\(tags)",
             "salePrice": "\(salePrice)",
             "regularPrice": "\(regularPrice)",
-            "phone": "\(phone)",
+            "cellphone": "\(phone)",
             "address": "\(address)",
             "state": "\(state)",
+            "images": "\(images)",
+            "dateAdded": "",
+            "userId": 0,
+            "userFullName": "",
+            "category": 0,
+            "subcategory": 0
         ]
         
         //        let headers : HTTPHeaders = ["Authorization": "Bearer \(Util.getToken()!)", "Accept": "application/json"]
@@ -126,7 +124,6 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
             switch response.result {
             case .success:
                 _ = JSON(response.data!)
-                
                 
                 break
                 
@@ -184,6 +181,27 @@ class PublishNewItemController: UIViewController, UINavigationControllerDelegate
     }
     
     @objc private func alertControllerBackgroundTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension PublishNewItemController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            if imageArray[safe: selectingImageAtPos] != nil {
+                imageArray[selectingImageAtPos] = image
+            } else {
+                imageArray.insert(image, at: selectingImageAtPos)
+            }
+            
+            imagesCollectionView.reloadData()
+        } else {
+            // Error message
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -260,6 +278,43 @@ extension Collection {
     /* Returns the element at the specified index if it is within bounds, otherwise nil. */
     subscript (safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
+    }
+    
+}
+
+extension UIImage {
+    
+//    func resizeByByte(maxByte: Int, completion: @escaping (Data) -> Void) {
+//        var compressQuality: CGFloat = 1
+//        var imageData = Data()
+//        var imageByte = jpegData(compressionQuality: 1)?.count
+//
+//        while imageByte! > maxByte {
+//            imageData = jpegData(compressionQuality: compressQuality)!
+//            imageByte = jpegData(compressionQuality: compressQuality)?.count
+//            compressQuality -= 0.1
+//        }
+//
+//        if maxByte > imageByte! {
+//            completion(imageData)
+//        } else {
+//            completion(jpegData(compressionQuality: 1)!)
+//        }
+//    }
+    
+    func resizeByByte(maxByte: Int) -> String {
+        var compressQuality: CGFloat = 1
+        var imageData = Data()
+        var imageByte = jpegData(compressionQuality: 1)?.count
+        
+        while imageByte! > maxByte {
+            imageData = jpegData(compressionQuality: compressQuality)!
+            imageByte = jpegData(compressionQuality: compressQuality)?.count
+            compressQuality -= 0.2
+        }
+        
+        //        return (UIImage.init(data: imageData)?.pngData()?.base64EncodedString())!
+        return imageData.base64EncodedString()
     }
     
 }
